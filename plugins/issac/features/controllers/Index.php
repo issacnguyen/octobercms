@@ -45,22 +45,26 @@ class Index extends Controller
     {
         parent::__construct();
 
-        // try {
-        //     if (!($this->theme = Theme::getEditTheme())) {
-        //         throw new ApplicationException(Lang::get('cms::lang.theme.edit.not_found'));
-        //     }
-        //     $this->vars['activeWidgets'][] = 'postList';
-        // }
-        // catch (Exception $ex) {
-        //     $this->handleError($ex);
-        // }
-        //
-        // $context = [
-        //     'postList' => 'posts',
-        // ];
+        try {
+            if (!($this->theme = Theme::getEditTheme())) {
+                throw new ApplicationException(Lang::get('cms::lang.theme.edit.not_found'));
+            }
+            $this->vars['activeWidgets'][] = 'postList';
+        }
+        catch (Exception $ex) {
+            $this->handleError($ex);
+        }
 
-        // BackendMenu::setContext('Issac.Features', 'features', @$context[$this->vars['activeWidgets'][0]]);
+        $context = [
+            'postList' => 'posts',
+        ];
 
-        BackendMenu::setContext('Issac.Features', 'features', 'index');
+        BackendMenu::setContext('Issac.Features', 'features', @$context[$this->vars['activeWidgets'][0]]);
+
+        // BackendMenu::setContext('Issac.Features', 'features', 'index');
+    }
+
+    public function index(){
+        ///echo "index";
     }
 }

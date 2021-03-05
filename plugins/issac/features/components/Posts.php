@@ -1,6 +1,7 @@
 <?php namespace Issac\Features\Components;
 
 use Cms\Classes\ComponentBase;
+use Issac\Features\Models\Post;
 
 class Posts extends ComponentBase
 {
@@ -8,8 +9,14 @@ class Posts extends ComponentBase
     {
         return [
             'name'        => 'posts Component',
-            'description' => 'No description provided yet...'
+            'description' => 'get all posts'
         ];
+    }
+
+    // This array becomes available on the page as {{ component.posts }}
+    public function posts()
+    {
+        return Post::all();
     }
 
     public function defineProperties()
