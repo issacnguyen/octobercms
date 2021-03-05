@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Index
+
+# Model Form Field configuration
+form: $/issac/features/models/index/fields.yaml
+
+# Model Class name
+modelClass: Issac\Features\Models\Index
+
+# Default redirect location
+defaultRedirect: issac/features/index
+
+# Create page
+create:
+    title: Create Index
+    redirect: issac/features/index/update/:id
+    redirectClose: issac/features/index
+
+# Update page
+update:
+    title: Edit Index
+    redirect: issac/features/index
+    redirectClose: issac/features/index
+
+# Preview page
+preview:
+    title: Preview Index
